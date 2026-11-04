@@ -1,0 +1,10 @@
+# Render blueprint for the YouTube Downloader backend.
+# Deploy: Render dashboard -> New -> Blueprint -> point it at the repo
+# containing this file, or create a Web Service from the Dockerfile manually.
+services:
+  - type: web
+    name: youtube-downloader-backend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
